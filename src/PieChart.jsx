@@ -10,6 +10,17 @@ const PieChart = () => {
       },
     ],
   };
+  const options = {
+    plugins: {
+      legend: {
+        position: "bottom",
+        labels: {
+          usePointStyle: true,
+          pointStyle: "circle",
+        },
+      },
+    },
+  };
 
   return (
     <div
@@ -30,13 +41,13 @@ const PieChart = () => {
       </div>
       <div
         style={{
-          height: "300px",
-          maxHeight: "100%",
+          flex: "1",
+          maxHeight: "300px",
           display: "flex",
           justifyContent: "center",
         }}
       >
-        <Pie data={data} height="100%" />
+        <Pie data={data} options={options} />
       </div>
     </div>
   );

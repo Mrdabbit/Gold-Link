@@ -58,41 +58,47 @@ const Table = () => {
       >
         <thead>
           <tr>
-            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
-              Strategy
-            </th>
-            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
-              TVL
-            </th>
-            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
-              Volatility
-            </th>
-            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
-              Collateral
-            </th>
-            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
-              PNL
-            </th>
+            <th style={{ padding: "8px 0px" }}>Strategy</th>
+            <th style={{ padding: "8px 0px" }}>TVL</th>
+            <th style={{ padding: "8px 0px" }}>Volatility</th>
+            <th style={{ padding: "8px 0px" }}>Collateral</th>
+            <th style={{ padding: "8px 0px" }}>PNL</th>
           </tr>
         </thead>
         <tbody>
           {datasets.map((data, index) => (
             <tr key={index}>
-              <td style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+              <td
+                style={{
+                  borderTop: "1px solid #C2C9D1",
+                  padding: "8px 0px",
+                }}
+              >
                 {data.name}
               </td>
               <td
-                style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}
+                style={{
+                  borderTop: "1px solid #C2C9D1",
+                  padding: "8px 0px",
+                }}
               >{`$${data.TVL.toLocaleString()}`}</td>
-              <td style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+              <td
+                style={{
+                  borderTop: "1px solid #C2C9D1",
+                  padding: "8px 0px",
+                }}
+              >
                 {<Pill text={data.volatility} />}
               </td>
               <td
-                style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}
+                style={{
+                  borderTop: "1px solid #C2C9D1",
+                  padding: "8px 0px",
+                }}
               >{`$${data.collateral.toLocaleString()}`}</td>
               <td
                 style={{
-                  borderBottom: "1px solid #C2C9D1",
+                  borderTop: "1px solid #C2C9D1",
                   padding: "8px",
                   color: Math.sign(data.PNL) === 1 ? "green" : "red",
                 }}
