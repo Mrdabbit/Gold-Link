@@ -41,6 +41,7 @@ const Table = () => {
         borderRadius: "10px",
         boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.05)",
         padding: "16px",
+        overflow: "hidden",
       }}
     >
       <h3 style={{ display: "flex", marginBottom: "16px" }}>
@@ -49,29 +50,51 @@ const Table = () => {
       <table
         style={{
           width: "100%",
+          borderCollapse: "seperate",
           border: "1px solid #C2C9D1",
-          borderRadius: "20px",
+          overflow: "hidden",
+          borderRadius: "10px",
         }}
       >
         <thead>
-          <tr style={{ borderBottom: "1px solid #C2C9D1" }}>
-            <th>Strategy</th>
-            <th>TVL</th>
-            <th>Volatility</th>
-            <th>Collateral</th>
-            <th>PNL</th>
+          <tr>
+            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+              Strategy
+            </th>
+            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+              TVL
+            </th>
+            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+              Volatility
+            </th>
+            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+              Collateral
+            </th>
+            <th style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+              PNL
+            </th>
           </tr>
         </thead>
         <tbody>
           {datasets.map((data, index) => (
-            <tr key={index} style={{ borderBottom: "1px solid #C2C9D1" }}>
-              <td>{data.name}</td>
-              <td>{`$${data.TVL}`}</td>
-              <td>{<Pill text={data.volatility} />}</td>
-              <td>{`$${data.collateral}`}</td>
+            <tr key={index}>
+              <td style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+                {data.name}
+              </td>
+              <td
+                style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}
+              >{`$${data.TVL.toLocaleString()}`}</td>
+              <td style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}>
+                {<Pill text={data.volatility} />}
+              </td>
+              <td
+                style={{ borderBottom: "1px solid #C2C9D1", padding: "8px" }}
+              >{`$${data.collateral.toLocaleString()}`}</td>
               <td
                 style={{
-                  color: `${Math.sign(data.PNL) === 1 ? "green" : "red"}`,
+                  borderBottom: "1px solid #C2C9D1",
+                  padding: "8px",
+                  color: Math.sign(data.PNL) === 1 ? "green" : "red",
                 }}
               >
                 {data.PNL.toLocaleString(undefined, {
