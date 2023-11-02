@@ -49,37 +49,29 @@ const Table = () => {
       <table
         style={{
           width: "100%",
-          borderCollapse: "collapse",
           border: "1px solid #C2C9D1",
           borderRadius: "20px",
         }}
       >
         <thead>
-          <tr>
-            <th style={{ borderBottom: "1px solid #C2C9D1" }}>Strategy</th>
-            <th style={{ borderBottom: "1px solid #C2C9D1" }}>TVL</th>
-            <th style={{ borderBottom: "1px solid #C2C9D1" }}>Volatility</th>
-            <th style={{ borderBottom: "1px solid #C2C9D1" }}>Collateral</th>
-            <th style={{ borderBottom: "1px solid #C2C9D1" }}>PNL</th>
+          <tr style={{ borderBottom: "1px solid #C2C9D1" }}>
+            <th>Strategy</th>
+            <th>TVL</th>
+            <th>Volatility</th>
+            <th>Collateral</th>
+            <th>PNL</th>
           </tr>
         </thead>
         <tbody>
           {datasets.map((data, index) => (
-            <tr key={index}>
-              <td style={{ borderBottom: "1px solid #C2C9D1" }}>{data.name}</td>
-              <td
-                style={{ borderBottom: "1px solid #C2C9D1" }}
-              >{`$${data.TVL}`}</td>
-              <td style={{ borderBottom: "1px solid #C2C9D1" }}>
-                {<Pill text={data.volatility} />}
-              </td>
-              <td
-                style={{ borderBottom: "1px solid #C2C9D1" }}
-              >{`$${data.collateral}`}</td>
+            <tr key={index} style={{ borderBottom: "1px solid #C2C9D1" }}>
+              <td>{data.name}</td>
+              <td>{`$${data.TVL}`}</td>
+              <td>{<Pill text={data.volatility} />}</td>
+              <td>{`$${data.collateral}`}</td>
               <td
                 style={{
                   color: `${Math.sign(data.PNL) === 1 ? "green" : "red"}`,
-                  borderBottom: "1px solid #C2C9D1",
                 }}
               >
                 {data.PNL.toLocaleString(undefined, {

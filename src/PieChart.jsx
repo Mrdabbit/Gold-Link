@@ -27,7 +27,7 @@ const PieChart = () => {
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <p>Lendering Allocations</p>
         <p>$5000 USDC</p>
-      </div>{" "}
+      </div>
       <div
         style={{
           height: "300px",
