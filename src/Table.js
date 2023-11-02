@@ -39,7 +39,7 @@ const Table = () => {
         height: "425px",
         width: "850px",
         borderRadius: "10px",
-        boxShadow: " 1px 1px 1px black",
+        boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.05)",
         padding: "16px",
       }}
     >

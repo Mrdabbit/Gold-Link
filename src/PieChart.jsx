@@ -20,7 +20,7 @@ const PieChart = () => {
         flexDirection: "column",
         background: "#ffffff",
         borderRadius: "10px",
-        boxShadow: " 1px 1px 1px black",
+        boxShadow: "0px 10px 15px rgba(0, 0, 0, 0.05)",
         padding: "17px 7px 7px 17px",
       }}
     >
